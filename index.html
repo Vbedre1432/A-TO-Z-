@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A to Z Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+   /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+ /* Reset Styles */
+ body, h1, h2, h3, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: #333;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+    }
+
+    .menu a {
+      margin-left: 20px;
+    }
+
+    /* Header Styles */
+    .header {
+      padding: 100px 20px;
+      text-align: center;
+      background: url('header-background.jpg') center/cover no-repeat;
+      margin-top: 80px;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .header p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      color: #0044ff;
+    }
+
+    .header button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      -webkit-transition: background-color 0.3s;
+      -o-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+    }
+
+    .header button:hover {
+      background-color: #45a049;
+    }
+
+    /* Image Slider Styles */
+    #image-slider {
+      margin-top: 20px;
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      padding: 20px;
+    }
+
+    /* Services Section Styles */
+    .services-section {
+      background-color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .services-grid {
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+
+    .services-item {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      -webkit-transition: -webkit-transform 0.3s;
+      transition: -webkit-transform 0.3s;
+      -o-transition: transform 0.3s;
+      transition: transform 0.3s;
+      transition: transform 0.3s, -webkit-transform 0.3s;
+    }
+
+    .services-item:hover {
+      -webkit-transform: translateY(-5px);
+          -ms-transform: translateY(-5px);
+              transform: translateY(-5px);
+    }
+
+    .services-item img {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: solid 2px gray;
+    }
+
+    .services-item p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .call-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      -webkit-transition: background-color 0.3s;
+      -o-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+    }
+
+    .call-button:hover {
+      background-color: #45a049;
+    }
+
+    /* Testimonials Section Styles */
+    .testimonials-section {
+      background-color: #f9f9f9;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .testimonial {
+      margin-bottom: 20px;
+    }
+
+    .testimonial img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .testimonial p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+    }
+
+    /* About Section Styles */
+    .about-section {
+      background-color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .about-section h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .about-section p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+              box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    .creative-touch {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #666;
+    }
+
+    /* Contact Form Styles */
+    .contact-form {
+      background-color: #f9f9f9;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contact-form h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      -webkit-transition: border-color 0.3s;
+      -o-transition: border-color 0.3s;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #45a049;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .submit-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      -webkit-transition: background-color 0.3s;
+      -o-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+    }
+
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+
+   /* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  clear: both;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 20px;
+  color: #e0c9c9; /* Default color */
+  -webkit-transition: color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: color 0.3s ease, -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease, -webkit-transform 0.3s ease; /* Added transition */
+}
+
+.social-icon:hover {
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
+  color: #fff; /* Change color on hover */
+}
+
+
+    /* Animated Button Styles */
+    .animated-button {
+      position: fixed;
+      bottom: 3rem;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 9999;
+      -webkit-transition: background-color 0.3s;
+      -o-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+      -webkit-animation: pulse 2s infinite;
+              animation: pulse 2s infinite;
+    }
+
+    .animated-button:hover {
+      background-color: #58f100;
+    }
+
+    .whatsapp-button {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 9999;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s;
+      -o-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+      -webkit-animation: pulse 2s infinite;
+              animation: pulse 2s infinite;
+}
+
+.whatsapp-button:hover {
+  background-color: #58f100;
+}
+
+
+    /* Button Animation */
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+      }
+      70% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      }
+      100% {
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
+    }
+    @keyframes pulse {
+      0% {
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+      }
+      70% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      }
+      100% {
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+
+      .menu {
+        display: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        background-color: #333;
+        padding: 20px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+      }
+
+      .menu a {
+        margin: 10px 0;
+      }
+      
+      .navbar a.logo {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+
+      .header {
+        padding: 80px 20px;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .header button {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+
+      .services-item p {
+        font-size: 12px;
+      }
+
+      .testimonial img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+      }
+
+      .testimonial p {
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+
+      .testimonial-author {
+        font-size: 14px;
+      }
+
+      .about-section h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .about-section p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .creative-touch {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      .animated-button {
+        bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="navbar">
+      <div class="container">
+        <a href="#home" class="logo">
+          <img src="logo.png" alt="Company Logo">
+          A to Z
+        </a>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu">
+          <a href="index.html">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="header">
+    <div class="container">
+      <h1>Welcome to A to Z Services</h1>
+      <p>Your one-stop solution for all your needs</p>
+      <button onclick="makeCall()">Contact Us</button>
+    </div>
+  </div>
+  <section id="image-slider">
+    <div class="container">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="rashmika.jpg" alt="Slide Image 1">
+        </div>
+        <div class="item">
+          <img src="parajkta.jpg" alt="Slide Image 2">
+        </div>
+        <div class="item">
+          <img src="kriti.jpg" alt="Slide Image 3">
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<main class="main-content">
+  <section class="services-section" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="services-item">
+          <img src="Sketch.png" alt="Service 1">
+          <h3>Computer Repair</h3>
+          <p>At A to Z, we provide top-notch computer repair services with experienced technicians at competitive prices. Our low inspection fees make us a popular choice for all your computer repair needs.
+
+
+
+
+
+          </p>
+          <button class="call-button" onclick="makeCall()">Call Now</button>
+        </div>
+        <div class="services-item">
+          <img src="v.jpg" alt="Service 2">
+          <h3>CCTV repair</h3>
+          <p>A to Z excels in CCTV repair, offering skilled technicians and competitive rates. Our prompt service ensures your surveillance system is quickly restored to optimal functionality..</p>
+          <button class="call-button" onclick="makeCall()">Call Now</button>
+        </div>
+        <div class="services-item">
+          <img src="kriti.jpg" alt="Service 3">
+          <h3>Laptop Repair</h3>
+          <p>A to Z specializes in laptop repair, providing expert technicians and affordable rates. Our swift service ensures your laptop is back up and running smoothly in no time.</p>
+          <button class="call-button" onclick="makeCall()">Call Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <img src="Jane Smith.jpg" alt="Testimonial 1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="testimonial-author">- John Doe</p>
+      </div>
+      <div class="testimonial">
+        <img src="John Doe.jpg" alt="Testimonial 2">
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="testimonial-author">- Jane Doe</p>
+      </div>
+    </div>
+  </section>
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>"We specialize in Repair & Services, offering convenient Doorstep Service with Same Day Washing Machine Service, Microwave Repair & Services, Chimney Repair & Services, AC Repair & Services, and Fridge Repair & Services, all at competitive prices. Benefit from our best discounts and prompt service by our experienced engineers. Our commitment to excellence includes providing 24/7 doorstep service for all your needs."</p>
+      <div class="about-image">
+        <img src="about.jpg" alt="About Image">
+      </div>
+      <p class="creative-touch">Designed with <i class="fas fa-heart" style="color: #ff6666;"></i> by A to Z Services</p>
+    </div>
+  </section>
+  <section class="contact-form" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2024 A to Z Services. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+<a href="#" class="animated-button"><i class="fa fa-phone" aria-hidden="true" onclick="makeCall()"></i></a>
+
+<a href="https://wa.me/+919284078430" class="whatsapp-button" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  });
+
+  $(".menu-toggle").click(function () {
+    $(".menu").slideToggle(300);
+  });
+
+  function makeCall() {
+    // Replace 'yourPhoneNumber' with your actual phone number
+    window.location.href = "tel:+919284078430";
+  }
+</script>
+</body>
+</html>
